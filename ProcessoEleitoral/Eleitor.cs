@@ -10,6 +10,7 @@ namespace ProcessoEleitoral
     {
         private String nome;
         private int titulo;
+        private int cpf;
 
         public String TratarDados()
         {
