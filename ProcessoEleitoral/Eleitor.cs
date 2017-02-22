@@ -15,8 +15,9 @@ namespace ProcessoEleitoral
         private int zona;
         private int secao;
 
-        public Eleitor(String nome, int titulo, int cpf, int zona, int secao)
+        public Eleitor(int id, String nome, int titulo, int cpf, int zona, int secao)
         {
+            this.id = id;
             this.nome = nome;
             this.titulo = titulo;
             this.cpf = cpf;
@@ -56,7 +57,7 @@ namespace ProcessoEleitoral
 
         public String TratarDados()
         {
-            return nome + ";" + titulo + "@";
+            return id + ";" + nome + ";" + titulo + ";" + cpf + ";" + zona + ";" + secao + "@";
         }
     }
 }

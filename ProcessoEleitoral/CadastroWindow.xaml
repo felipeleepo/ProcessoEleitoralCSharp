@@ -20,26 +20,80 @@
                 </GroupBox>
                 <GroupBox x:Name="dado1" Grid.Row="2" Header="" Width="794" Height="510" VerticalAlignment="Bottom" Margin="2,0,0,0" >
                     <StackPanel>
-                        <TextBlock x:Name="tbserie1" Text="Série:"/>
-                        <TextBox x:Name="textboxSerie1" IsEnabled="False"/>
-                        <TextBlock x:Name="tbnome1" Text="Nome:" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                        <TextBox x:Name="textboxNome1" IsEnabled="False"/>
-                        <TextBlock x:Name="tbnumero1" Text="Título:"/>
-                        <TextBox x:Name="textboxNumero1" IsEnabled="False"/>
-                        <Button x:Name="novo1" Content="Novo" Click="novo1_Click"/>
-                        <Button x:Name="salvar1" Content="Salvar" Click="salvar1_Click"/>
-                        <Button x:Name="fechar1" Content="Fechar" Click="fechar1_Click"/>
+                        <TextBlock x:Name="tbserie1" Text="Série:" Width="100" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxSerie1" IsEnabled="False" Height="20" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbnome1" Text="Nome:" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxNome1" IsEnabled="False" Height="20" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbnumero1" Text="Título:" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxNumero1" IsEnabled="False" HorizontalAlignment="Left" Width="200" Height="20" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbcpf" Text="CPF:" Width="50" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxCPF1" IsEnabled="False" Width="200" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbzona" Text="Zona:" Width="30px" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxZona" IsEnabled="False" Width="100px" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbSecao" Text="Seção:" Width="40px" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,-32,0,0" Height="20"></TextBlock>
+                        <TextBox x:Name="textboxSecao" Width="100" HorizontalAlignment="Left" Margin="300,-18,0,0" Height="20"></TextBox>
+                        <Button x:Name="novo1" Content="Novo" Click="novo1_Click" Width="100" HorizontalAlignment="Left" Margin="120,10,0,0" Height="20"/>
+                        <Button x:Name="salvar1" Content="Salvar" Click="salvar1_Click" HorizontalAlignment="Left" Width="100" Height="20" VerticalAlignment="Top" Margin="340,-20,0,0"/>
+                        <Button x:Name="fechar1" Content="Fechar" Click="fechar1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="20" Margin="560,-20,0,0"/>
                     </StackPanel>
                 </GroupBox>
             </Grid>
         </TabItem>
         <TabItem Header="Candidatos" Width="100">
-
+            <Grid>
+                <GroupBox x:Name="Busca2" Grid.Row="1" Header="Busca" Width="790" Margin="2,0,0,0" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="790" Height="50">
+                        <RadioButton x:Name="bNome2" GroupName="busca"  Content="Nome:" Height="20" HorizontalAlignment="Left" Width="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Checked="bNome2_Checked" Margin="6,16,0,0" VerticalAlignment="Center"/>
+                        <TextBox x:Name="tNome2" Height="20" TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" Margin="80,-19,0,0" IsEnabled="False" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                        <RadioButton x:Name="bNumero2" GroupName="busca" Content="Número: " Height="20" HorizontalAlignment="Left" Width="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="300,-20,0,0" Checked="bNumero2_Checked" VerticalAlignment="Center"/>
+                        <Button x:Name="buttonBusca2" Content="Buscar" HorizontalAlignment="Left" Margin="633,-22,0,0" Width="80" Height="22" VerticalAlignment="Center" Click="buttonBusca2_Click"/>
+                        <TextBox x:Name="tNumero2" Height="20" TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" IsEnabled="False" Margin="369,-20,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    </StackPanel>
+                </GroupBox>
+                <GroupBox x:Name="dado2" Grid.Row="2" Header="" Width="794" Height="510" VerticalAlignment="Bottom" Margin="2,0,0,0" >
+                    <StackPanel>
+                        <TextBlock x:Name="tbserie2" Text="Série:" Width="100" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxSerie2" IsEnabled="False" Height="20" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                       <TextBlock x:Name="tbnome2" Text="Nome:" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxNome2" IsEnabled="False" Height="20" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbnumero2" Text="Número:" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxNumero2" IsEnabled="False" HorizontalAlignment="Left" Width="200" Height="20" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbpartido" Text="Partido:" Width="50" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxPartido" IsEnabled="False" Width="200" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <Button x:Name="novo2" Content="Novo" Click="novo2_Click" Width="100" HorizontalAlignment="Left" Margin="120,10,0,0" Height="20"/>
+                        <Button x:Name="salvar2" Content="Salvar" Click="salvar2_Click" HorizontalAlignment="Left" Width="100" Height="20" VerticalAlignment="Top" Margin="340,-20,0,0"/>
+                        <Button x:Name="fechar2" Content="Fechar" Click="fechar1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="20" Margin="560,-20,0,0"/>
+                    </StackPanel>
+                </GroupBox>
+                
+            </Grid>
         </TabItem>
-        <TabItem Header="Eleições" Width="100">
+        <TabItem Header="Eleições" Width="100" GotFocus="TabItem_GotFocus">
+            <Grid>
+                <GroupBox x:Name="dado3" Header="Registre uma Nova Eleição:" Width="800" VerticalAlignment="Top" Margin="2,0,0,0" Height="600" HorizontalAlignment="Left" >
+                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Height="600" Width="800">
+                        <TextBlock x:Name="tbserie3" Text="Série:" Width="100" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxSerie3" IsEnabled="False" Height="20" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbCargo" Text="Cargo:" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxCargo" Height="20" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbLocal" Text="Local:" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxLocal" HorizontalAlignment="Left" Width="200" Height="20" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbAno" Text="Ano:" Width="50" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <TextBox x:Name="textboxAno" Width="200" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
+                        <Button x:Name="salvar3" Content="Salvar" Click="salvar3_Click" HorizontalAlignment="Left" Width="100" Height="20" VerticalAlignment="Top" Margin="200,20,0,0"/>
+                        <Button x:Name="fechar3" Content="Fechar" Click="fechar1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="20" Margin="500,-20,0,0"/>
+                    </StackPanel>
+                </GroupBox>
 
+            </Grid>
         </TabItem>
-        <Grid Height="100" Width="100"/>
-
+        <TabItem Header="Associações" Width="100">
+            <StackPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60">
+                <Label x:Name="l1" Content="Eleições Cadastradas" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" ></Label>
+                <ComboBox x:Name="comboBox" Initialized="comboBox_Initialized"/>
+                <ListView x:Name="listView" Width="400" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False" Margin="0,36,0,0" Height="300" IsEnabledChanged="listView_IsEnabledChanged"/>
+               
+            </StackPanel>
+        </TabItem>
     </TabControl>
 </Window>

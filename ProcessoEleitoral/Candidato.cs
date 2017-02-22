@@ -13,8 +13,9 @@ namespace ProcessoEleitoral
         private int numero;
         private string partido;
 
-        public Candidato(string nome, int numero, string partido)
+        public Candidato(int id, string nome, int numero, string partido)
         {
+            this.id = id;
             this.nome = nome;
             this.numero = numero;
             this.partido = partido;
@@ -40,7 +41,7 @@ namespace ProcessoEleitoral
 
         public string TratarDados()
         {
-            throw new NotImplementedException();
+            return id + ";" + nome + ";" + numero + ";" + partido + "@";
         }
     }
 }

@@ -15,12 +15,12 @@ namespace ProcessoEleitoral
         private List<Candidato> candidatos = new List<Candidato>();
         private List<int> secoes = new List<int>();
 
-        public Eleicao(string cargo, string local, int ano, Candidato candidato)
+        public Eleicao(int id, string cargo, string local, int ano)
         {
+            this.id = id;
             this.cargo = cargo;
             this.local = local;
             this.ano = ano;
-            candidatos.Add(candidato);
         }
 
         public string Cargo
@@ -41,6 +41,19 @@ namespace ProcessoEleitoral
             set { ano = value; }
         }
 
+        public int Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
         public void AdicionarSecao(string secoes)
         {
             //TODO 
@@ -48,7 +61,7 @@ namespace ProcessoEleitoral
 
         public string TratarDados()
         {
-            throw new NotImplementedException();
+            return id + ";" + cargo + ";" + local + ";" + ano + "@";
         }
     }
 }
