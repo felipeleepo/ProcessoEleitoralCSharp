@@ -16,7 +16,7 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,40,0,0" TextWrapping="Wrap" Text="Bem vindo ao Processo Eleitoral" FontSize="40" VerticalAlignment="Top" Width="600" TextAlignment="Center" Foreground="#FF03211D" Height="60"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" Text="Escolha uma das opções abaixo:" VerticalAlignment="Top" FontSize="40" Width="600" TextAlignment="Center" Foreground="#FF03211D" Height="60"/>
         <Button x:Name="button" Content="Cadastros" HorizontalAlignment="Left" Margin="100,0,0,200" VerticalAlignment="Bottom" Width="250" Height="100" FontSize="36" Click="button_Click"/>
-        <Button x:Name="button1" Content="Iniciar Eleição" HorizontalAlignment="Right" Margin="0,0,100,200" VerticalAlignment="Bottom" Width="250" Height="100" FontSize="36"/>
+        <Button x:Name="button1" Content="Iniciar Eleição" HorizontalAlignment="Right" Margin="0,0,100,200" VerticalAlignment="Bottom" Width="250" Height="100" FontSize="36" Click="button1_Click"/>
 
 
     </Grid>

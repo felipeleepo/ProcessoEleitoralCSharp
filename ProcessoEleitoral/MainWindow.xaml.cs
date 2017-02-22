@@ -30,5 +30,11 @@ namespace ProcessoEleitoral
             CadastroWindow janela = new CadastroWindow();
             janela.ShowDialog();
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            Login janela = new Login();
+            janela.ShowDialog();
+        }
     }
 }
