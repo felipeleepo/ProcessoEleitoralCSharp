@@ -74,6 +74,8 @@
     <Compile Include="CadastroWindow.xaml.cs">
       <DependentUpon>CadastroWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Candidato.cs" />
+    <Compile Include="Eleicao.cs" />
     <Compile Include="Eleitor.cs" />
     <Compile Include="IControle.cs" />
     <Compile Include="Login.xaml.cs">
