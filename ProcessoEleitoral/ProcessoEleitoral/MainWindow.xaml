@@ -1,0 +1,15 @@
+﻿<Window x:Class="ProcessoEleitoral.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProcessoEleitoral"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="215" Width="599">
+    <Grid Margin="0,0,0,-1" Background="LightGreen">
+        <Label x:Name="label" Content="      Bem-vindo ao software de Processo Eleitoral! &#xD;&#xA;                   Selecione uma opção abaixo.   " HorizontalAlignment="Center" Margin="10,21,10,0" VerticalAlignment="Top" Height="102" Width="571" FontSize="24"/>
+        <Button x:Name="buttonCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="141,128,0,0" VerticalAlignment="Top" Width="148" Height="33" Click="buttonCadastrar_Click"/>
+        <Button x:Name="buttonVotar" Content="Votar" HorizontalAlignment="Left" Margin="313,128,0,0" VerticalAlignment="Top" Width="140" Height="33" Click="buttonVotar_Click"/>
+
+    </Grid>
+</Window>

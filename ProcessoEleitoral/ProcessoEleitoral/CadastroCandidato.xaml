@@ -1,0 +1,23 @@
+﻿<Window x:Class="ProcessoEleitoral.CadastroCandidato"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProcessoEleitoral"
+        mc:Ignorable="d"
+        Title="Cadastrar Candidato" Height="300" Width="461.196">
+    <Grid Background="LightCyan">
+        <Label x:Name="label" Content="Nome" HorizontalAlignment="Left" Margin="23,24,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Número" HorizontalAlignment="Left" Margin="12,129,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Partido" HorizontalAlignment="Left" Margin="18,181,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxNome" HorizontalAlignment="Left" Height="23" Margin="82,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="348"/>
+        <TextBox x:Name="textBoxNumero" HorizontalAlignment="Left" Height="23" Margin="82,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="109"/>
+        <TextBox x:Name="textBoxPartido" HorizontalAlignment="Left" Height="23" Margin="82,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62"/>
+        <Label x:Name="label3" Content="Cargo" HorizontalAlignment="Left" Margin="24,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxCargo" HorizontalAlignment="Left" Height="23" Margin="82,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"/>
+        <Button x:Name="buttonVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="98,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="buttonCadastrar" Content="Cadastrar" HorizontalAlignment="Left" Margin="206,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="buttonSair" Content="Sair" HorizontalAlignment="Left" Margin="310,239,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
