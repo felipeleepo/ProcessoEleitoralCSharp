@@ -72,7 +72,7 @@ namespace ProcessoEleitoral
             textboxNumero1.IsEnabled = true;
             textboxCPF1.IsEnabled = true;
             textboxZona.IsEnabled = true;
-            textboxSecao.IsEnabled = true;
+           
             dado1.Header = "Novo Eleitor";
             //Esvaziar campos da busca e Novos Exceto a Série
             tNome1.Text = "";
@@ -81,7 +81,7 @@ namespace ProcessoEleitoral
             textboxNumero1.Text = "";
             textboxCPF1.Text = "";
             textboxZona.Text = "";
-            textboxSecao.Text = "";
+            
         }
 
         private void fechar1_Click(object sender, RoutedEventArgs e)
@@ -107,7 +107,6 @@ namespace ProcessoEleitoral
                         textboxNumero1.Text = v[2];
                         textboxCPF1.Text = v[3];
                         textboxZona.Text = v[4];
-                        textboxSecao.Text = v[5];
                     }
                     else
                     {
@@ -117,7 +116,6 @@ namespace ProcessoEleitoral
                         textboxNumero1.Text = "";
                         textboxCPF1.Text = "";
                         textboxZona.Text = "";
-                        textboxSecao.Text = "";
                     }
                 }
                 else if (bNumero1.IsChecked == true)
@@ -129,7 +127,6 @@ namespace ProcessoEleitoral
                         textboxNumero1.Text = v[2];
                         textboxCPF1.Text = v[3];
                         textboxZona.Text = v[4];
-                        textboxSecao.Text = v[5];
                     }
                     else
                     {
@@ -146,7 +143,6 @@ namespace ProcessoEleitoral
                     textboxNumero1.Text = "";
                     textboxCPF1.Text = "";
                     textboxZona.Text = "";
-                    textboxSecao.Text = "";
                 }
             }
         }
