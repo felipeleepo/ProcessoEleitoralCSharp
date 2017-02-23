@@ -13,8 +13,16 @@ namespace ProcessoEleitoral
         private string local;
         private int ano;
         private List<Candidato> candidatos = new List<Candidato>();
-        private List<int> secoes = new List<int>();
 
+        public Eleicao() { }
+        public Eleicao (String a)
+        {
+            String[] s = a.Split(';');
+            this.id = int.Parse(s[0]);
+            this.cargo = s[1];
+            this.local = s[2];
+            this.ano = int.Parse(s[3]);
+        }
         public Eleicao(int id, string cargo, string local, int ano)
         {
             this.id = id;
@@ -41,27 +49,39 @@ namespace ProcessoEleitoral
             set { ano = value; }
         }
 
-        public int Id
+        public int getId()
         {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
+            return id;
         }
 
-        public void AdicionarSecao(string secoes)
+        public List<Candidato> getListCandidato()
         {
-            //TODO 
+            return candidatos;
+        }
+       public String MostrarCandidatos(int i)
+        {
+            return candidatos[i].Mostrar();
+        }
+
+        public int PegarID(String s)
+        {
+            String[] v = s.Split(' ');
+            return int.Parse(v[0]);
+        }
+
+        public String Mostrar()
+        {
+            return id + "-" + cargo + "-" + local + "-" + ano;
         }
 
         public string TratarDados()
         {
             return id + ";" + cargo + ";" + local + ";" + ano + "@";
+        }
+
+        public void AdicionarCandidato(Candidato c)
+        {
+            candidatos.Add(c);
         }
     }
 }

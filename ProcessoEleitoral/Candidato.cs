@@ -20,6 +20,21 @@ namespace ProcessoEleitoral
             this.numero = numero;
             this.partido = partido;
         }
+        public Candidato (String a, bool c)
+        {
+            String[] s;
+            if (c)
+                s = a.Split(';');
+            else
+                s = a.Split('-');
+            this.id = int.Parse(s[0]);
+            this.nome = s[1];
+            this.numero = int.Parse(s[2]);
+            this.partido = s[3]; 
+        }
+
+
+        public Candidato() { }
 
         public string Nome
         {
@@ -37,6 +52,17 @@ namespace ProcessoEleitoral
         {
             get { return partido; }
             set { partido = value; }
+        }
+
+        public String Mostrar()
+        { 
+            return id + "-" + nome + "-" + numero + "-" + partido;
+        }
+
+        public int PegarID(String s)
+        {
+            String [] v = s.Split(' ');
+            return int.Parse(v[0]); 
         }
 
         public string TratarDados()

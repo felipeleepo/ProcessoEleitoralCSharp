@@ -12,17 +12,25 @@ namespace ProcessoEleitoral
         private String nome;
         private int titulo;
         private int cpf;
-        private int zona;
-        private int secao;
+        private string local;
 
-        public Eleitor(int id, String nome, int titulo, int cpf, int zona, int secao)
+        public Eleitor(int id, String nome, int titulo, int cpf, string local)
         {
             this.id = id;
             this.nome = nome;
             this.titulo = titulo;
             this.cpf = cpf;
-            this.zona = zona;
-            this.secao = secao;
+            this.local = local;
+        }
+
+        public Eleitor (String a)
+        {
+            String[] s = a.Split(';');
+            this.id = int.Parse(s[0]);
+            this.nome = s[1];
+            this.titulo = int.Parse(s[2]);
+            this.cpf = int.Parse(s[3]);
+            this.local = s[4];
         }
 
         public string Nome
@@ -43,21 +51,11 @@ namespace ProcessoEleitoral
             set { cpf = value; }
         }
 
-        public int Zona
-        {
-            get { return zona; }
-            set { zona = value; }
-        }
-
-        public int Secao
-        {
-            get { return secao; }
-            set { secao = value; }
-        }
+       
 
         public String TratarDados()
         {
-            return id + ";" + nome + ";" + titulo + ";" + cpf + ";" + zona + ";" + secao + "@";
+            return id + ";" + nome + ";" + titulo + ";" + cpf + ";" + local + "@";
         }
     }
 }

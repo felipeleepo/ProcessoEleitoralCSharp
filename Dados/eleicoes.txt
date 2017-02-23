@@ -1,6 +1,2 @@
-1;felipe;123;pbb
-2;qwe;qwe;123
-3;oi;natal;2013
-4;p;p;2
-5;ifeni;idnfi;123
-6;ui;ui;222
+1;Deputado;Natal;2019
+2;Vereador;Songa;2013

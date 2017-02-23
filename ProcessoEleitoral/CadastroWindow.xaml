@@ -28,10 +28,8 @@
                         <TextBox x:Name="textboxNumero1" IsEnabled="False" HorizontalAlignment="Left" Width="200" Height="20" Margin="20,0,0,0"/>
                         <TextBlock x:Name="tbcpf" Text="CPF:" Width="50" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                         <TextBox x:Name="textboxCPF1" IsEnabled="False" Width="200" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
-                        <TextBlock x:Name="tbzona" Text="Zona:" Width="30px" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbzona" Text="Local:" Width="30px" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0"/>
                         <TextBox x:Name="textboxZona" IsEnabled="False" Width="100px" HorizontalAlignment="Left" Height="20" Margin="20,0,0,0"/>
-                        <TextBlock x:Name="tbSecao" Text="Seção:" Width="40px" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="300,-32,0,0" Height="20"></TextBlock>
-                        <TextBox x:Name="textboxSecao" Width="100" HorizontalAlignment="Left" Margin="300,-18,0,0" Height="20"></TextBox>
                         <Button x:Name="novo1" Content="Novo" Click="novo1_Click" Width="100" HorizontalAlignment="Left" Margin="120,10,0,0" Height="20"/>
                         <Button x:Name="salvar1" Content="Salvar" Click="salvar1_Click" HorizontalAlignment="Left" Width="100" Height="20" VerticalAlignment="Top" Margin="340,-20,0,0"/>
                         <Button x:Name="fechar1" Content="Fechar" Click="fechar1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="20" Margin="560,-20,0,0"/>
@@ -54,7 +52,7 @@
                     <StackPanel>
                         <TextBlock x:Name="tbserie2" Text="Série:" Width="100" Height="20" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                         <TextBox x:Name="textboxSerie2" IsEnabled="False" Height="20" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
-                       <TextBlock x:Name="tbnome2" Text="Nome:" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
+                        <TextBlock x:Name="tbnome2" Text="Nome:" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
                         <TextBox x:Name="textboxNome2" IsEnabled="False" Height="20" Width="500" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                         <TextBlock x:Name="tbnumero2" Text="Número:" Width="50" HorizontalAlignment="Left" Margin="20,0,0,0"/>
                         <TextBox x:Name="textboxNumero2" IsEnabled="False" HorizontalAlignment="Left" Width="200" Height="20" Margin="20,0,0,0"/>
@@ -65,7 +63,7 @@
                         <Button x:Name="fechar2" Content="Fechar" Click="fechar1_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="20" Margin="560,-20,0,0"/>
                     </StackPanel>
                 </GroupBox>
-                
+
             </Grid>
         </TabItem>
         <TabItem Header="Eleições" Width="100" GotFocus="TabItem_GotFocus">
@@ -88,11 +86,17 @@
             </Grid>
         </TabItem>
         <TabItem Header="Associações" Width="100">
-            <StackPanel Width="300" HorizontalAlignment="Center" VerticalAlignment="Top" Height="60">
+            <StackPanel Width="800" HorizontalAlignment="Center" VerticalAlignment="Top" Height="600">
                 <Label x:Name="l1" Content="Eleições Cadastradas" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="200" Height="30" ></Label>
-                <ComboBox x:Name="comboBox" Initialized="comboBox_Initialized"/>
-                <ListView x:Name="listView" Width="400" HorizontalAlignment="Center" VerticalAlignment="Top" IsEnabled="False" Margin="0,36,0,0" Height="300" IsEnabledChanged="listView_IsEnabledChanged"/>
-               
+                <ComboBox x:Name="comboBox" Initialized="comboBox_Initialized" Width="300" Height="25"/>
+                <Label x:Name="l2" Content="Inseridos:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="25" Margin="20,0,0,0"/>
+                <ListView x:Name="listView" Width="350" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0" Height="300"/>
+                <Label x:Name="l3" Content="Disponíveis:" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-323,270,0" Width="100" Height="25"/>
+                <ListView x:Name="listView1" Width="350" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-300,20,0" Height="300" Initialized="listView1_Initialized"/>
+                <Button x:Name="add" Content="Adicionar" Click="add_Click"/>
+                <Button x:Name="atualizar" Content="Atualizar" Click="atualizar_Click_1"/>
+
+
             </StackPanel>
         </TabItem>
     </TabControl>

@@ -23,10 +23,30 @@ namespace ProcessoEleitoral
         int count;
         int countCand;
         int countEleicao;
-
+        List<Eleicao> listaEleicao = new List<Eleicao>();
+        List<Candidato> listaCandidato = new List<Candidato>();
+        List<Eleitor> listaEleitor = new List<Eleitor>();
 
         public CadastroWindow()
         {
+            String[] vetor = File.ReadAllLines("..\\..\\..\\Dados\\eleicoes.txt");
+            String[] vetor2 = File.ReadAllLines("..\\..\\..\\Dados\\candidatos.txt");
+            String[] vetor3 = File.ReadAllLines("..\\..\\..\\Dados\\eleitores.txt");
+            for (int i = 0; i < vetor.Length; i++)
+            {
+                Eleicao aux = new Eleicao(vetor[i]);
+                listaEleicao.Add(aux);
+            }
+            for (int i = 0; i < vetor2.Length; i++)
+            {
+                Candidato aux = new Candidato(vetor2[i], true);
+                listaCandidato.Add(aux);
+            }
+            for (int i = 0; i < vetor3.Length; i++)
+            {
+                Eleitor aux3 = new Eleitor(vetor3[i]);
+                listaEleitor.Add(aux3);
+            }
             InitializeComponent();
         }
 
@@ -136,7 +156,7 @@ namespace ProcessoEleitoral
             try
             {
                 // Instancia um Eleitor e trata seus dados para o arquivo.
-                Eleitor eleitor = new Eleitor(count, textboxNome1.Text, int.Parse(textboxNumero1.Text), int.Parse(textboxCPF1.Text), int.Parse(textboxZona.Text), int.Parse(textboxSecao.Text));
+                Eleitor eleitor = new Eleitor(count, textboxNome1.Text, int.Parse(textboxNumero1.Text), int.Parse(textboxCPF1.Text), (textboxZona.Text));
                 String s = eleitor.TratarDados();
                 // Cria um vetor de linhas que já existem no arquivo
                 String[] vetor = File.ReadAllLines("..\\..\\..\\Dados\\eleitores.txt");
@@ -147,6 +167,7 @@ namespace ProcessoEleitoral
                 // Escreve a nova linha
                 f.WriteLine(s.Remove(s.Length - 1));
                 f.Close();
+                listaEleitor.Add(eleitor);
                 MessageBox.Show("Salvo!");
             }
             catch (FormatException) { MessageBox.Show("Clique em Novo e preenchas os campos."); }
@@ -223,7 +244,7 @@ namespace ProcessoEleitoral
             // Habilitar os campos e gerar o número de série
             String[] vetor = File.ReadAllLines("..\\..\\..\\Dados\\candidatos.txt");
             countCand = vetor.Length + 1;
-            textboxSerie2.Text = count.ToString();
+            textboxSerie2.Text = countCand.ToString();
             textboxNome2.IsEnabled = true;
             textboxNumero2.IsEnabled = true;
             textboxPartido.IsEnabled = true;
@@ -252,6 +273,7 @@ namespace ProcessoEleitoral
                 // Escreve a nova linha
                 f.WriteLine(s.Remove(s.Length - 1));
                 f.Close();
+                listaCandidato.Add(cand);
                 MessageBox.Show("Salvo!");
             }
             catch (FormatException) { MessageBox.Show("Clique em Novo e preenchas os campos."); }
@@ -280,6 +302,7 @@ namespace ProcessoEleitoral
                 // Escreve a nova linha
                 f.WriteLine(s.Remove(s.Length - 1));
                 f.Close();
+                listaEleicao.Add(ele);
                 MessageBox.Show("Salvo!");
             }
             catch (FormatException) { MessageBox.Show("Clique em Novo e preenchas os campos."); }
@@ -294,41 +317,67 @@ namespace ProcessoEleitoral
                 listView.Items.Add(vetor[i]);
         }
 
-        private void atualizar_Click(object sender, RoutedEventArgs e)
-        {
-            comboBox.Items.Clear();
-            String[] vetor = File.ReadAllLines("..\\..\\..\\Dados\\eleicoes.txt");
-            for (int i = 0; i < vetor.Length; i++)
-                comboBox.Items.Add(vetor[i]);
-            if (comboBox.SelectedItem != null)
-            {
-                listView.IsEnabled = true;
-                MessageBox.Show("True");
-            }
-            else
-            {
-                listView.IsEnabled = false;
-                MessageBox.Show("false");
-            }
-        }
+       
 
         private void comboBox_Initialized(object sender, EventArgs e)
         {
             comboBox.Items.Clear();
-            MessageBox.Show("oi");
-            String[] vetor = File.ReadAllLines("..\\..\\..\\Dados\\eleicoes.txt");
-            for (int i = 0; i < vetor.Length; i++)
-                comboBox.Items.Add(vetor[i]);
-          /*  if (comboBox.SelectedItem != null)
+            for (int i = 0; i < listaEleicao.Count; i++)
             {
-                listView.IsEnabled = true;
-                MessageBox.Show("True");
+                comboBox.Items.Add(listaEleicao[i].Mostrar());
+                
             }
-            else
+        }
+
+        private void listView1_Initialized(object sender, EventArgs e)
+        {
+            foreach (var x in listaCandidato)
             {
-                listView.IsEnabled = false;
-                MessageBox.Show("false");
-            }*/
+                listView1.Items.Add(x.Mostrar());
+            }
+        }
+
+        private void add_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string[] aux = comboBox.SelectedItem.ToString().Split('-');
+                Candidato cand = new Candidato(listView1.SelectedItem.ToString(), false);
+                foreach (var x in listaEleicao)
+                    if (int.Parse(aux[0]) == x.getId())
+                        x.AdicionarCandidato(cand);
+                listView.Items.Add(listView1.SelectedItem);
+                listView1.Items.Remove(listView1.SelectedItem);
+            }
+            catch (NullReferenceException) { MessageBox.Show("Selecione um candidato para adicionar"); }
+        }
+
+        private void atualizar_Click_1(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                listView.Items.Clear();
+                listView1.Items.Clear();
+                string[] aux = comboBox.SelectedItem.ToString().Split('-');
+                foreach (var x in listaEleicao)
+                    if (int.Parse(aux[0]) == x.getId())
+                        foreach (var y in x.getListCandidato())
+                            listView.Items.Add(y.Mostrar());
+
+                if (listView.Items.Count < 1)
+                {
+                    foreach (var y in listaCandidato)
+                        listView1.Items.Add(y.Mostrar());
+                }
+                else
+                    foreach (var x in listView.Items)
+                    {
+                        foreach (var y in listaCandidato)
+                            if (y.Mostrar() != x.ToString() || x.ToString() == null)
+                                listView1.Items.Add(y.Mostrar());
+                    }
+            }
+            catch (NullReferenceException) { MessageBox.Show("Selecione a eleição"); }
         }
     }
     
